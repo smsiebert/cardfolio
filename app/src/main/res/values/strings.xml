@@ -1,3 +1,5 @@
 <resources>
-    <string name="app_name">cardfolio</string>
+    <string name="app_name">Cardfolio</string>
+    <string name = "card_name">Sada Siebert</string>
+    <string name = "card_hobby">I love to run!</string>>
 </resources>
