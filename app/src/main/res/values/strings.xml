@@ -2,4 +2,16 @@
     <string name="app_name">Cardfolio</string>
     <string name = "card_name">Sada Siebert</string>
     <string name = "card_hobby">I love to run!</string>>
+
+    <string name = "card_name_label">Name</string>>
+    <string name = "card_hobby_label">Hobby</string>>
+    <string name = "card_age_label">Age</string>>
+
+    <string name="age_warning">Numbers only</string>
+
+    <string name="edit_button_text">Edit</string>
+    <string name="show_button_text">Show</string>
+
+    <string name="editing">Editing</string>
+    <string name="locked">Locked</string>
 </resources>
