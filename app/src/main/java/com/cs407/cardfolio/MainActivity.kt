@@ -64,12 +64,6 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-
-        window.statusBarColor = android.graphics.Color.TRANSPARENT
-        window.navigationBarColor = android.graphics.Color.TRANSPARENT
-
-        WindowCompat.getInsetsController(window, window.decorView)?.isAppearanceLightStatusBars = false
-
         setContent {
             CardfolioTheme {
                 Column (
@@ -111,8 +105,7 @@ fun Cardfolio() {
                         gradientBottomColor
                     )
                 )
-            )
-        .systemBarsPadding(),
+            ),
         color = Color.Transparent
     ) {
         Box(
