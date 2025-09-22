@@ -60,6 +60,7 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.layout.ModifierLocalBeyondBoundsLayout
+import androidx.core.view.WindowCompat
 import com.cs407.cardfolio.ui.theme.AppTheme
 import java.nio.file.WatchEvent
 
@@ -67,6 +68,12 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
+
+        window.statusBarColor = android.graphics.Color.TRANSPARENT
+        window.navigationBarColor = android.graphics.Color.TRANSPARENT
+
+        WindowCompat.getInsetsController(window, window.decorView)?.isAppearanceLightStatusBars = false
+
         setContent {
             CardfolioTheme {
                 Column (
@@ -88,17 +95,14 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun Cardfolio() {
-
     var name by remember { mutableStateOf("") }
     var hobby by remember { mutableStateOf("") }
     var age by remember { mutableStateOf("") }
     var isEditing by remember { mutableStateOf(true) }
 
     val outlineColor = MaterialTheme.colorScheme.outline
-
     val gradientTopColor = AppTheme.customColors.gradientTop
     val gradientBottomColor = AppTheme.customColors.gradientBottom
-
     val context = LocalContext.current
 
     Surface(
@@ -111,7 +115,8 @@ fun Cardfolio() {
                         gradientBottomColor
                     )
                 )
-            ),
+            )
+        .systemBarsPadding(),
         color = Color.Transparent
     ) {
         Box(
